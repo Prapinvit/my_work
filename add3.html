@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Increment/Decrement</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        button {
+            font-size: 2rem;
+            padding: 10px 20px;
+            border: 2px solid #000;
+            background-color: #9c4480;
+            /* เปลี่ยนสีพื้นหลังของปุ่ม */
+            color: white;
+            /* เปลี่ยนสีของตัวอักษร */
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #9c4480;
+            /* เปลี่ยนสีเมื่อโฮเวอร์ที่ปุ่ม */
+            transform: translateY(-2px);
+        }
+
+        #number {
+            font-size: 2rem;
+            width: 50px;
+            text-align: center;
+            transition: color 0.3s ease;
+        }
+
+        button:hover #number {
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <button id="decrement">-</button>
+        <div id="number">0</div>
+        <button id="increment">+</button>
+    </div>
+
+    <script>
+        const numberElement = document.getElementById('number');
+        let number = 0;
+
+        document.getElementById('decrement').addEventListener('click', () => {
+            number--;
+            numberElement.textContent = number;
+        });
+
+        document.getElementById('increment').addEventListener('click', () => {
+            number++;
+            numberElement.textContent = number;
+        });
+    </script>
+</body>
+
+</html>

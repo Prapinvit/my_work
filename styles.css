@@ -1,0 +1,92 @@
+body {
+    font-family: 'Kanit', sans-serif;
+    font-size: 16pt;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    color: #292929;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #3a3a8c;
+    color: #ffffff;
+    padding: 10px 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+section {
+    margin-bottom: 2rem;
+}
+
+section h2 {
+    border-bottom: 2px solid #3a3a8c;
+    padding-bottom: 0.5rem;
+    color: #3a3a8c;
+}
+
+#profile {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    display: block;
+    margin: 1rem auto;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin: 0.5rem 0;
+}
+
+.sub-list {
+    margin-left: 1rem;
+}
+
+footer {
+    background-color: #3a3a8c;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    position: bottom;
+    bottom: 0;
+    width: 100%;
+}
+
+a {
+    color: #3a3a8c;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}

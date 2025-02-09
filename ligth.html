@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beautiful Lights</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        #app {
+            display: flex;
+            gap: 20px;
+        }
+
+        .light {
+            border-radius: 50%;
+            border-width: 5px;
+            border-color: #ccc;
+            border-style: solid;
+            width: 120px;
+            height: 120px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .light:hover {
+            transform: scale(1.1);
+        }
+
+        .on {
+            background-color: yellow;
+            border-color: gold;
+            box-shadow: 0 0 15px rgba(255, 223, 0, 0.6);
+        }
+
+        .off {
+            background-color: grey;
+            border-color: darkgrey;
+            box-shadow: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div @click="turnLight(1)" :class="['light', lights[0] ? 'on' : 'off']">Light 1</div>
+        <div @click="turnLight(2)" :class="['light', lights[1] ? 'on' : 'off']">Light 2</div>
+    </div>
+
+    <script>
+        const { createApp, ref } = Vue
+
+        createApp({
+            setup() {
+                const lights = ref([false, false])
+
+                function turnLight(index) {
+                    lights.value[index - 1] = !lights.value[index - 1]
+                }
+
+                return {
+                    lights,
+                    turnLight
+                }
+            }
+        }).mount('#app')
+    </script>
+</body>
+
+</html>
